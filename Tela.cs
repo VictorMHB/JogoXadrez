@@ -8,6 +8,7 @@ namespace xadrez
         {
             for (int i = 0; i < tabuleiro.linhas; i++)
             {
+                Console.Write(8 - i + " ");
                 for (int j = 0; j < tabuleiro.colunas; j++)
                 {
                     if (tabuleiro.peca(i, j) == null)
@@ -16,11 +17,19 @@ namespace xadrez
                     }
                     else
                     {
-                        Console.Write(tabuleiro.peca(i,j) + " ");
+                        imprimirPeca(tabuleiro.peca(i, j));
+                        Console.Write(" ");
                     }
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static void imprimirPeca(Peca peca)
+        {
+            Console.Write(peca);
         }
     }
 }

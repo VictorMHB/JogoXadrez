@@ -8,7 +8,7 @@ namespace jogo
 
         public override string ToString()
         {
-            return "♖";
+            return cor == Cor.Branca ? "♜" : "♖";
         }
     }
 }
