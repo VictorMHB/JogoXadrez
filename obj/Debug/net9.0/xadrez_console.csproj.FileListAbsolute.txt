@@ -12,3 +12,4 @@ C:\Users\torug\Documents\Projetos\Xadrez\obj\Debug\net9.0\refint\xadrez_console.
 C:\Users\torug\Documents\Projetos\Xadrez\obj\Debug\net9.0\xadrez_console.pdb
 C:\Users\torug\Documents\Projetos\Xadrez\obj\Debug\net9.0\xadrez_console.genruntimeconfig.cache
 C:\Users\torug\Documents\Projetos\Xadrez\obj\Debug\net9.0\ref\xadrez_console.dll
+C:\Users\torug\Documents\Projetos\Xadrez\obj\Debug\net9.0\xadrez_console.sourcelink.json
