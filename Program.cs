@@ -1,7 +1,6 @@
 ﻿using System;
 using tabuleiro;
 using jogo;
-using System.Runtime.CompilerServices;
 
 namespace xadrez
 {
@@ -11,18 +10,21 @@ namespace xadrez
         {
             try
             {
-                Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+                PartidaXadrez partida = new PartidaXadrez();
 
-                tabuleiro.inserirPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 0));
-                tabuleiro.inserirPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 7));
-                tabuleiro.inserirPeca(new Rei(tabuleiro, Cor.Preta), new Posicao(0, 4));
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tabuleiro);
 
-                tabuleiro.inserirPeca(new Torre(tabuleiro, Cor.Branca), new Posicao(7, 0));
-                tabuleiro.inserirPeca(new Torre(tabuleiro, Cor.Branca), new Posicao(7, 7));
-                tabuleiro.inserirPeca(new Rainha(tabuleiro, Cor.Branca), new Posicao(7, 3));
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicao().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicao().toPosicao();
 
-
-                Tela.imprimirTabueliro(tabuleiro);
+                    partida.executarMovimento(origem, destino);
+                }
             }
             catch (TabuleiroException e)
             {

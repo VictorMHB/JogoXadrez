@@ -13,7 +13,7 @@ namespace tabuleiro
             pecas = new Peca[linhas, colunas];
         }
 
-        public Peca peca(int linha, int coluna)
+        public Peca? peca(int linha, int coluna)
         {
             return pecas[linha, coluna];
         }
@@ -34,6 +34,20 @@ namespace tabuleiro
         {
             pecas[posicao.linha, posicao.coluna] = peca;
             peca.posicao = posicao;
+        }
+
+        public Peca removerPeca(Posicao posicao)
+        {
+            if (peca(posicao) == null)
+            {
+                return null;
+            }
+
+            Peca aux = peca(posicao);
+            aux.posicao = null;
+            pecas[posicao.linha, posicao.coluna] = null;
+
+            return aux;
         }
 
         public bool posicaoValida(Posicao posicao)
